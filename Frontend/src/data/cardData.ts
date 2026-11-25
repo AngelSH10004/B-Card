@@ -10,11 +10,13 @@ export const fernandoCardData = {
     lastName: 'Gutiérrez',
     rol: 'Gerente de Alianzas Corporativas',
     company: 'GARTARIS',
-    photoUrl: '/portada.webp',
+    photoMobile: '/portada.webp',
+    photoTablet: '/PortadaTablet.webp',
+    photoDesktop: '/PortadaPC.webp',
     photoAlt: 'Retrato de Fernando Gutiérrez',
   },
   contacto: {
-    email: 'f.gutierrez@aleris.mx',
+    email: 'f.gutierrez@gartaris.mx',
     phone: '+52 55 8392 1044',
   },
   accionesMain: {

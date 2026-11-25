@@ -39,15 +39,15 @@ export default function ContactsPage() {
               <img
                 src={noEncontrado}
                 alt="Contacto no encontrado"
-                className="h-auto w-[clamp(130px,42vw,169px)] select-none"
+                className="h-auto w-36 select-none sm:w-40 md:w-44"
               />
-              <p className="mt-6 max-w-58.75 text-[13.5px] font-medium leading-[1.35] text-black">
+              <p className="mt-6 max-w-58.75 text-sm font-medium leading-[1.35] text-black md:text-base">
                 Parece que este contacto aún no está en tu lista
               </p>
               <ButtonSimple
                 ruta="/"
                 texto="Regresar"
-                clases="mt-6 flex h-[clamp(44px,6.2dvh,52px)] w-full cursor-pointer items-center justify-center rounded-lg bg-black px-5 text-[clamp(0.92rem,3.8vw,1.02rem)] font-semibold text-white transition-transform hover:bg-neutral-900 active:scale-[0.99]"
+                clases="mt-6 flex h-12 w-full cursor-pointer items-center justify-center rounded-lg bg-black px-5 text-sm font-semibold text-white transition-transform hover:bg-neutral-900 active:scale-[0.99] sm:h-13 sm:text-base md:h-14 md:text-lg lg:h-11 lg:w-40 lg:text-sm"
               />
             </div>
           )}

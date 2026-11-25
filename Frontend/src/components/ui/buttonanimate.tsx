@@ -1,14 +1,24 @@
 import { AnimatePresence, motion } from 'motion/react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 
 interface ButtonProps {
-  TextoPrincipal: string;
+  TextoPrincipal: ReactNode;
   textoFinal: string;
+  variant?: 'outline' | 'dark';
+  clases?: string;
+  onClick?: () => void;
 }
 
 
-export default function ButtonAnimate({TextoPrincipal, textoFinal}: ButtonProps) {
+export default function ButtonAnimate({
+  TextoPrincipal,
+  textoFinal,
+  variant = 'outline',
+  clases,
+  onClick,
+}: ButtonProps) {
     const [copy, setCopy] = useState(false);
+    const isDark = variant === 'dark';
       useEffect(() => {
     if (!copy) return;
 
@@ -20,6 +30,7 @@ export default function ButtonAnimate({TextoPrincipal, textoFinal}: ButtonProps)
   }, [copy]);
 
   const handleShare = () => {
+    onClick?.();
     if (!copy) setCopy(true);
   };
 
@@ -30,11 +41,16 @@ export default function ButtonAnimate({TextoPrincipal, textoFinal}: ButtonProps)
           onClick={handleShare}
           whileTap={{ scale: 0.99 }}
           animate={{
-            borderColor: copy ? '#F95C4B' : '#9b9b9b',
-            color: copy ? '#FFFFFF' : '#000000',
+            borderColor: copy ? '#F95C4B' : isDark ? '#000000' : '#9b9b9b',
+            color: copy || isDark ? '#FFFFFF' : '#000000',
           }}
           transition={{ duration: 0.3, ease: 'easeOut' }}
-          className="relative flex h-[clamp(44px,6.2dvh,52px)] w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg border bg-transparent px-5 text-[clamp(0.92rem,3.8vw,1.02rem)] font-semibold backdrop-blur-[5px]"
+          className={`relative flex cursor-pointer items-center justify-center overflow-hidden border font-semibold whitespace-nowrap ${
+            isDark ? 'bg-black' : 'bg-transparent backdrop-blur-[5px]'
+          } ${
+            clases ??
+            'h-12 w-full rounded-lg px-5 text-sm sm:h-13 sm:text-base md:h-14 md:text-lg lg:h-11 lg:w-40 lg:px-3 lg:text-sm'
+          }`}
         >
           <motion.span
             aria-hidden="true"
@@ -51,7 +67,7 @@ export default function ButtonAnimate({TextoPrincipal, textoFinal}: ButtonProps)
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -4 }}
               transition={{ duration: 0.18 }}
-              className="relative z-10"
+              className="relative z-10 inline-flex min-w-0 items-center gap-1.5 sm:gap-2"
             >
               {copy ? textoFinal : TextoPrincipal}
             </motion.span>

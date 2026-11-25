@@ -10,7 +10,7 @@ interface PropsContacHeader {
 export function ContactsHeader({ busqueda, onBuscar }: PropsContacHeader) {
   const navigate = useNavigate();
   return (
-    <header className="px-5 pt-[clamp(1.25rem,4.5dvh,2.75rem)] min-[375px]:px-6 md:px-8">
+    <header className="px-5 pt-6 sm:px-6 sm:pt-8 md:px-8 md:pt-10 lg:pt-12">
       <div className="flex items-center gap-3.5">
         <button
         onClick={() => navigate('/')}
@@ -53,7 +53,7 @@ export function ContactsHeader({ busqueda, onBuscar }: PropsContacHeader) {
             onChange={(e) => onBuscar(e.target.value)}
             placeholder="Busca nombres o empresas..."
             aria-label="Busca nombres o empresas"
-            className="min-w-0 w-full bg-transparent text-[13.5px] text-white outline-none placeholder:text-[#9b9b9b]"
+            className="min-w-0 w-full bg-transparent text-base text-white outline-none placeholder:text-[#9b9b9b]"
           />
           {busqueda && (
             <button
@@ -80,7 +80,7 @@ export function ContactsHeader({ busqueda, onBuscar }: PropsContacHeader) {
         </div>
       </div>
 
-      <h1 className="mt-6 text-[22px] font-bold tracking-[-0.01em] text-black">
+      <h1 className="mt-6 text-2xl font-bold tracking-[-0.01em] text-black md:text-3xl">
         Contactos
       </h1>
       <div className="mt-3 h-px w-full bg-[#c9c9c9]" />
