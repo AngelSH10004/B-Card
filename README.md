@@ -15,6 +15,7 @@ Se mostraran todos los comandos necesarios para poder ejecutar la pagina web:
 
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
+| `cd Frontend`             | Ir a la carpeta principal.                          |
 | `npm install`             | Instalas todas las dependencias.                          |
 | `npm run dev`             | Empiezas hostear de forma local el sitio web.      |
 | `npm run build`           | Construir el producto en caso de quererlo usar en un ambiente real.        |
