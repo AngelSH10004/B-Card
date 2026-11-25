@@ -16,7 +16,7 @@ export function ContactsHeader({ busqueda, onBuscar }: PropsContacHeader) {
         onClick={() => navigate('/')}
           type="button"
           aria-label="Volver"
-          className="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full text-black"
+          className="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full text-black lg:scale-150"
         >
           <svg
             viewBox="0 0 24 24"

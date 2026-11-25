@@ -5,6 +5,7 @@ import ButtonSimple from '../components/buttons/buttons';
 import { ContactCard } from '../components/vista2/ContactCard';
 import { ContactsHeader } from '../components/vista2/ContactsHeader';
 import { ContactsData } from '../data/contactsData';
+import { WithForm } from '../components/ui/modals';
 
 /** Segunda vista Contacts*/
 export default function ContactsPage() {
@@ -22,7 +23,7 @@ export default function ContactsPage() {
       <div className="relative z-10 mx-auto flex min-h-dvh w-full flex-1 flex-col md:max-w-180">
         <ContactsHeader busqueda={busqueda} onBuscar={setBusqueda} />
 
-        <section className="flex flex-1 flex-col px-5 pb-8 min-[375px]:px-6 md:px-8">
+        <section className="flex flex-1 flex-col px-5 pb-24 min-[375px]:px-6 md:px-8 md:pb-28">
           {contacts.length > 0 ? (
             contacts.map(([key, contact]) => (
               <ContactCard
@@ -53,6 +54,7 @@ export default function ContactsPage() {
           )}
         </section>
       </div>
+      <WithForm />
     </main>
   );
 }
